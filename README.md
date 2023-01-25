@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Real-time Voice Translation App 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sure, the code you provided is a React.js application that allows users to upload an audio file and receive a translated transcription of the audio. The application is using the Assembly AI API for transcribing the audio file and the Azure Cognitive Services API for translating the text to a different language.
 
-## Available Scripts
+The application uses the useState hook to manage the component's state and the useEffect hook to trigger a side-effect when a certain condition is met, in this case, when the user uploads an audio file. The useEffect hook is used to make an API call to the Assembly AI API to upload the audio file and retrieve the upload URL which is then used in another API call to transcribe the audio file.
 
-In the project directory, you can run:
+The translateWav function is used to make a post request to the Assembly AI API to transcribe the audio file and the checkStatus function is used to check the status of the transcription process, when the transcription is complete the text is set in the component's state and the translateText function is called to translate the text to a different language.
 
-### `npm start`
+The application is also using Material-UI components for UI elements such as the Button component, the Select component, the FormControl component, the InputLabel component, and the MenuItem component. The uuid4 library is used to generate unique ids for the transcription process.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application also allows users to input custom API keys in case they want to use their own Assembly AI and Azure Cognitive Services API keys. The A_APIChange and Z_APIChange functions are used to handle the changes in the input fields and the handleAPIForm function is used to toggle the visibility of the custom API key input fields.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The speakText function is used to speak the translated text using the browser's speech synthesis API.
 
-### `npm test`
+# Running The App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
 
-### `npm run build`
+```
+git clone https://github.com/<your-username>/audio-transcription-translation-app.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd audio-transcription-translation-app
+```
+Install the required dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm install
+```
 
-### `npm run eject`
+Create a .env file in the root of the project and add your API keys
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+touch .env
+```
+```
+ASSEMBLY_AI_API_KEY=your_assembly_ai_api_key
+AZURE_COGNITIVE_SERVICES_API_KEY=your_azure_cognitive_services_api_key
+```
+Start the development server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application should be running on http://localhost:3000
