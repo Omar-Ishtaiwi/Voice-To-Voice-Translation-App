@@ -1,6 +1,6 @@
 # Real-time Voice Translation App 
 
-Sure, the code you provided is a React.js application that allows users to upload an audio file and receive a translated transcription of the audio. The application is using the Assembly AI API for transcribing the audio file and the Azure Cognitive Services API for translating the text to a different language.
+React.js app that allows users to upload an audio file and receive a translated transcription of the audio. The application is using the Assembly AI API for transcribing the audio file and the Azure Cognitive Services API for translating the text to a different language.
 
 The application uses the useState hook to manage the component's state and the useEffect hook to trigger a side-effect when a certain condition is met, in this case, when the user uploads an audio file. The useEffect hook is used to make an API call to the Assembly AI API to upload the audio file and retrieve the upload URL which is then used in another API call to transcribe the audio file.
 
